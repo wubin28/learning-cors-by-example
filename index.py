@@ -7,6 +7,7 @@ class basicRequestHandler(tornado.web.RequestHandler):
         self.write(f"Served successfully.")
 
     def options(self):
+        self.set_header("Access-Control-Allow-Origin", "*")
         self.set_status(204)
         self.finish()
 
